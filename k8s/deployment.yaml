@@ -4,4 +4,16 @@ metadata:
   name: conversao-distancia
 spec:
   replicas: 1
-  selector:
+  selector: 
+    matchLabels:
+      app: conversao-distancia
+  template:
+    metadata:
+      labels:
+        app: conversao-distancia
+    spec: 
+      containers:
+      - name: conversao-distancia
+        image: williampaludo/conversao-distancia:v1
+        ports:
+        - containerPort: 5000
